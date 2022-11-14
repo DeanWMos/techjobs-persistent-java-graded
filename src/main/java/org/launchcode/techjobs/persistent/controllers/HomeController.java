@@ -42,8 +42,11 @@ public class HomeController {
     public String displayAddJobForm(Model model) {
         model.addAttribute("title", "Add Job");
         model.addAttribute(new Job());
+        model.addAttribute("employers", employerRepository.findAll());
+        model.addAttribute("skills", skillRepository.findAll());
         return "add";
     }
+
 
     @PostMapping("add")
     public String processAddJobForm(@ModelAttribute @Valid Job newJob,

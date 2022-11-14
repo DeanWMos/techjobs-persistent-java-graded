@@ -54,22 +54,22 @@ public class TestTaskTwo extends AbstractTest {
     /*
     * Verifies that AbstractEntity.id has correct annotations
     * */
-//    @Test
-//    public void testIdFieldHasCorrectAnnotations () throws ClassNotFoundException {
-//        Class abstractEntityClass = getClassByName("models.AbstractEntity");
-//        Field idField = null;
-//        try {
-//            idField = abstractEntityClass.getDeclaredField("id");
-//        } catch (NoSuchFieldException e) {
-//            fail("AbstractEntity does not have an id field");
-//        }
-//
-//        Annotation idAnnotation = idField.getAnnotation(Id.class);
-//        assertNotNull(idAnnotation, "id field must have @Id annotation");
-//
-//        Annotation generatedValueAnnotation = idField.getAnnotation(GeneratedValue.class);
-//        assertNotNull(generatedValueAnnotation, "id field must have @GeneratedValue annotation");
-//    }
+    @Test
+    public void testIdFieldHasCorrectAnnotations () throws ClassNotFoundException {
+        Class abstractEntityClass = getClassByName("models.AbstractEntity");
+        Field idField = null;
+        try {
+            idField = abstractEntityClass.getDeclaredField("id");
+        } catch (NoSuchFieldException e) {
+            fail("AbstractEntity does not have an id field");
+        }
+
+        Annotation idAnnotation = idField.getAnnotation(Id.class);
+        assertNotNull(idAnnotation, "id field must have @Id annotation");
+
+        Annotation generatedValueAnnotation = idField.getAnnotation(GeneratedValue.class);
+        assertNotNull(generatedValueAnnotation, "id field must have @GeneratedValue annotation");
+    }
 
     /*
     * Verifies that AbstractEntity.name has correct annotations
