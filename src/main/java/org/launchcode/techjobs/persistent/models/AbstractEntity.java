@@ -9,12 +9,13 @@ import java.util.Objects;
 
 
 @MappedSuperclass
-public abstract class AbstractEntity {
-@ID
-@GeneratedValue
-private int id;
 
-    @NotBlank
+public abstract class AbstractEntity {
+    @ID
+    @GeneratedValue
+    private int id;
+
+    @NotBlank(message = "Name required")
     @Size(min = 2, max = 77)
     private String name;
 
