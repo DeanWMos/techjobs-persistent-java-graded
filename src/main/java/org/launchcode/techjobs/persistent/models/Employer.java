@@ -2,15 +2,19 @@ package org.launchcode.techjobs.persistent.models;
 
 import org.hibernate.validator.constraints.Length;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
-
 public class Employer extends AbstractEntity {
     @NotBlank
-    @Length(min = 1, max = 100)
+    @Size(min =3, max = 77)
     public String location;
+
+    public String getLocation(){
+        return location;
+    }
 
     public Employer() {}
 

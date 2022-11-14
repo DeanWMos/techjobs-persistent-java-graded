@@ -1,8 +1,10 @@
 package org.launchcode.techjobs.persistent.models;
 
 import org.hibernate.validator.constraints.Length;
-
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 
@@ -10,10 +12,10 @@ import java.util.Objects;
 public abstract class AbstractEntity {
 @ID
 @GeneratedValue
-    private int id;
+private int id;
 
     @NotBlank
-    @Length(min = 1, max = 255)
+    @Size(min = 2, max = 77)
     private String name;
 
     public int getId() {
